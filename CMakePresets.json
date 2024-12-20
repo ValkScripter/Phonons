@@ -16,10 +16,39 @@
     ],
     "buildPresets": [
         {
-            "name": "GCC",
+            "name": "Build",
             "description": "",
             "displayName": "",
             "configurePreset": "GCC"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "Test",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "GCC"
+        }
+    ],
+    "packagePresets": [
+        {
+            "name": "Package",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "GCC"
+        }
+    ],
+    "workflowPresets": [
+        {
+            "name": "Workflow",
+            "description": "",
+            "displayName": "",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "GCC"
+                }
+            ]
         }
     ]
 }
