@@ -2,22 +2,31 @@
 cmake_minimum_required(VERSION 3.20)
 
 # Project name and version
-project(Phonons VERSION 0.1.0 LANGUAGES C CXX)
+project(Phonons VERSION 0.1.0)
 
 # Set C++ standard
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# Add include directories
-include_directories(include)
+# Include FetchContent
+include(FetchContent)
+cmake_policy(SET CMP0135 NEW)
+
 
 # Add executables
+FetchContent_Declare(GSL
+  GIT_REPOSITORY "https://github.com/microsoft/GSL"
+  GIT_TAG "v4.1.0"
+  GIT_SHALLOW ON
+)
+FetchContent_MakeAvailable(GSL)
+
 add_executable(Phonons main.cpp)
+target_link_libraries(Phonons PRIVATE Microsoft.GSL::GSL)
 
 # GoogleTest
-include(FetchContent)
 FetchContent_Declare(
   googletest
   URL https://github.com/google/googletest/archive/refs/tags/v1.15.2.zip
