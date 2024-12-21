@@ -10,8 +10,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# Add include directories
+# Include FetchContent
 include(FetchContent)
+cmake_policy(SET CMP0135 NEW)
+
 
 # Add executables
 FetchContent_Declare(GSL
