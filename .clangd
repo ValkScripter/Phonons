@@ -1,7 +1,7 @@
 CompileFlags:
   Add: [
-    "-std=c++14",
-    "-stdlib=libc++",
+    "-std=c++20",
+    # "-stdlib=libc++",
     "-Wall",
     "-Wextra",
     "-Werror",
@@ -18,6 +18,7 @@ Diagnostics:
       - bugprone-*
     Remove:
       - modernize-use-trailing-return-type
+      - modernize-use-auto
 
 InlayHints:
   BlockEnd: Yes
